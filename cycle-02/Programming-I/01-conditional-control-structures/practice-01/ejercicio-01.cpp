@@ -65,19 +65,25 @@
  ******************************************************************************/
 
  #include <iostream>
+ #include <cmath>
  
  int main()
  {
-    float num1,num1,mediaAritmetica,mediaGeometrica;
+    float num1,num2;
 
     std::cout<<"Ingrese el primer número"<<std::endl;
     std::cin>>num1;
     std::cout<<"Ingrese el segundo número"<<std::endl;
     std::cin>>num2;
 
-
-
+    float mediaAritmetica = (num1+num2)/2.0;
+    std::cout<<"La media aritmética de "<<num1<<" y "<<num2<<" es "<<mediaAritmetica<<std::endl;
+    
+    if (num1*num2>=0){
+        float mediaGeometrica = sqrt(num1*num2);
+        std::cout<<"La media geométrica de "<<num1<<" y "<<num2<<" es "<<mediaGeometrica<<std::endl;
+    }else{
+        std::cout<<"La media geométrica no es válida, el producto debe ser mayor o igual a 0";
+    }        
     return 0;
-
-
  }
