@@ -3,7 +3,7 @@
  * METADATA
  * -----------------------------------------------------------------------------
  * @file    ejercicio-02.cpp
- * @author  José
+ * @author  José Andrés
  * @date    2025-09-09
  * @brief   Hallar la media aritmética y media geométrica de tres números.
  *

@@ -3,7 +3,7 @@
  * METADATA
  * -----------------------------------------------------------------------------
  * @file    ejercicio-03.cpp
- * @author  José
+ * @author  José Andrés
  * @date    2025-09-09
  * @brief   Convertir temperaturas de grados Centígrados a Fahrenheit
  * @problem Una temperatura en ºC se puede convertir a su equivalente Fahrenheit (ºF)

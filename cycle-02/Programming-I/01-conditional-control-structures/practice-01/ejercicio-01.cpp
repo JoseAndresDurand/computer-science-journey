@@ -3,7 +3,7 @@
  * METADATA
  * -----------------------------------------------------------------------------
  * @file    ejercicio-01.cpp
- * @author  José
+ * @author  José Andrés
  * @date    2025-09-08
  * @brief   Calcula la media aritmética y geométrica de dos números.
  *

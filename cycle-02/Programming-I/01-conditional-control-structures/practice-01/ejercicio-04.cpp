@@ -3,7 +3,7 @@
  * METADATA
  * -----------------------------------------------------------------------------
  * @file    ejercicio-04.cpp
- * @author  José
+ * @author  José Andrés
  * @date    2025-09-09
  * @brief   Realizar las 4 operaciones con 2 números.
  * @problem Hallar la suma, resta, multiplicación y división de dos números.

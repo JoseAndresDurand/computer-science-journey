@@ -32,19 +32,16 @@
  * 2.  Declarar las variables num1, num2, num3, menor.
  * 3.  Mostrar mensaje "Ingrese tres numeros :"
  * 4.  Leer y almacenar el valor en num1, num2, num3.
- * 5.  Asignar el valor de num1 a la variable menor.
- * 6.  SI (num1 < num2 and num1<num3) ENTONCES
- * 7.       menor = num1
- * 8.  SINO SI (num2 < num1 and num2<num3) ENTONCES
- * 9.       menor = num2 
- * 10. SINO SI (num3 < num2 and num3<num1) ENTONCES
- * 11.      menor = num3
- * 12. SINO
- * 13.      Mostrar mensaje los 3 numeros son iguales 
- * 15. FIN SI
+ * 5.  SI (num1 <= num2 and num1 <= num3) ENTONCES
+ * 6.       menor = num1
+ * 7.  SINO SI (num2 <= num1 and num2 <= num3) ENTONCES
+ * 8.       menor = num2 
+ * 9. SINO SI (num3 <= num2 and num3 <= num1) ENTONCES
+ * 10.      menor = num3
+ * 11. FIN SI
  *
  * ### Edge Cases & Limits:
- * Igualdad (Crítico): Este es el principal caso a considerar.
+ * Igualdad: Este es el principal caso a considerar.
  * Dos números son iguales y son el mínimo (ej. 8, 3, 3). El programa debe identificar 3 como el menor.
  * Todos los números son iguales (ej. 7, 7, 7). El programa debe identificar 7 como el menor.
  * Números negativos: La lógica de comparación debe funcionar correctamente cuando uno o más de los números son negativos.
@@ -66,23 +63,18 @@
  using namespace std;
  int main()
  {
-    int num1;
-    float calculo;
-    cout<<"Ingresa un numero : "<<endl;
-    cin>>num1;
+    int num1, num2, num3, menor;
+    cout<<"Ingresar 3 numeros : "<<endl;
+    cin>>num1>>num2>>num3;
 
-    if (num1 % 5 == 0){
-        calculo = pow(num1,3);
-        cout<<"El numero "<<num1<<" al cubo es "<<calculo<<endl;
-    }else if ( abs(num1) % 10 == 7){
-        if (num1 >= 0){
-            calculo = sqrt(num1);
-            cout<<"La raiz cuadrada de "<<num1<<" es "<<calculo<<endl;
-        }else{
-            cout<<"[Error] El numero "<<num1<<" termina en 7 pero es menor a 0 "<<endl;
-        }            
-    }else{
-            cout<<"El numero "<<num1<<" no es divisible por 5 ni termina en 7"<<endl;
+    if (num1 <= num2 && num1 <= num3){
+        menor = num1;
+    }else if (num2 <= num1 && num2 <= num3){
+        menor = num2;
+    }else if (num3 <= num2 && num3 <= num1){
+        menor = num3;
     }
+    cout<<"El menor es "<<menor<<endl;
+
     return 0;
  }
