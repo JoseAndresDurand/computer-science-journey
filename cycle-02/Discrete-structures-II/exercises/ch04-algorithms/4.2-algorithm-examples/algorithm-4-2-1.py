@@ -15,6 +15,7 @@ def busqueda_texto_corregida(texto, patron):
             j = j + 1
 
         if j == m:
+            
             return i # Devolvemos la posición de inicio i
 
     return -1
