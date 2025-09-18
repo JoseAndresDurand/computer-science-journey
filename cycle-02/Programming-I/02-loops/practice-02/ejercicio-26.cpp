@@ -46,34 +46,35 @@
  using namespace std;
 
  int main(){
-    int num, numFactorial;
-    cout<<"Ingresar el numero para realizar las permutaciones: "<<endl;
+    int num, numFactorial, numFactorialMedio, valor;
+    cout<<"Ingresar el numero para realizar las permutaciones: (Solo n = 3) "<<endl;
     cin>>num;
     cout<<"Las permutaciones son"<<endl;
+    cout<<endl;
 
     numFactorial = 1;
     for (int i=1;i<=num;i++){
         numFactorial *= i;
     }
 
-    for (int i=1; i<=numFactorial;i++){
-        cout<<i<<": ";
-        for (int j=1; j<=num;j++){
-            int valor = (i+j) % num + 1;
-            cout<<valor<<" "; 
-            
-            /*
-            1: 3 1 2
-            2: 1 2 3
-            3: 2 3 1
-            Lograr invertir cada una y se tiene todas las combinaciones.            
-            */
-            
+    numFactorialMedio = numFactorial/2;
+    
+    for (int i=1;i<=numFactorialMedio;i++){
+        
+        for (int j=1; j<=numFactorialMedio; j++){
+            valor = (j+i)%num+1;
+            cout<<valor<<" ";
             
         }
-        
+  
+        cout<<endl;
+        for (int j=numFactorial; j>numFactorialMedio; j--){
+            valor = (j+i)%num+1;
+            cout<<valor<<" ";
+            
+        }
+  
         cout<<endl;
     }
-
-    return 0;
- }
+    
+ } 
