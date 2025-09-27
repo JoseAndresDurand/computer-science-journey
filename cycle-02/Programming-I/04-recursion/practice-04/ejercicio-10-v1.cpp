@@ -2,11 +2,11 @@
  * -----------------------------------------------------------------------------
  * METADATA
  * -----------------------------------------------------------------------------
- * @file    ejercicio-05.cpp
+ * @file    ejercicio-10.cpp
  * @author  José Andrés
- * @date    2025-09-25
- * @brief   Mostrar las permutaciones de los dígitos de un numero dado.
- * @problem 5. Dado un número entero positivo N con m dígitos mostrar todas las permutaciones de sus dígitos
+ * @date    2025-09-26
+ * @brief   Verificar si una cadena es palíndroma.
+ * @problem 10. Verificar si una cadena es palíndroma.
  *          
  *******************************************************************************
  * -----------------------------------------------------------------------------
@@ -16,10 +16,8 @@
  * ## ANALYSIS
  *
  * ### Inputs:
- * - un numero entero positivo.
  *
  * ### Outputs:
- * - las permutaciones de los digitos del numero.
  *
  * ### Key Variables:
  * - 
@@ -37,35 +35,32 @@
 
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 using namespace std;
 
-void permutar(string& texto, int inicio) {
-    if (inicio == texto.length() - 1) {
-        cout<<texto<< endl;
-        return;
+bool palindromo(string cadena){
+    string cadenaInvertida;
+    if (cadena.size() == 1){
+        return true;
     }
-    for (int i = inicio; i < texto.length(); i++) {
-        swap(texto[inicio], texto[i]);
-        permutar(texto, inicio + 1);
-        swap(texto[inicio], texto[i]);
+    for (int i=cadena.size()-1; i>=0;i--){
+        cadenaInvertida = cadenaInvertida + cadena[i];
     }
+    if (cadena == cadenaInvertida){
+        return true;
+    }
+    return false;
 }
 
+int main(){
+    string cadena;
+    cout<<"Ingrese una cadena de texto: "<<endl,
+    cin>>cadena;
 
-int main() {
-    int numero;
-    cout<<"Ingrese un numero :"<<endl;
-    cin>>numero;
-    if (numero >= 0){
-        string digitos = to_string(numero);
-        cout<<"Las permutaciones de los digitos del numero "<<numero<<" son: "<<endl;
-        permutar(digitos,0);
+    if (palindromo(cadena)){
+        cout<<"La cadena SÍ es palíndroma"<<endl;
     }else{
-        cout<<"Debe ingresar un numero positivo";
+        cout<<"La cadena NO es palíndroma"<<endl;
     }
-
-
     return 0;
 }
