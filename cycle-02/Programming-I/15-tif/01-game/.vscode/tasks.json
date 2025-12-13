@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Construir Juego TIF",
+            "type": "process",
+            "command": "g++", /* Ya funciona porque agregaste el Path */
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\main.exe", /* El nombre de tu ejecutable final */
+                
+                /* INCLUIR (Donde están los .h) */
+                "-I", "C:/raylib/include",
+                
+                /* LIBRERÍA (Donde están los .a / .lib) */
+                "-L", "C:/raylib/lib",
+                
+                /* ENLACE (Las piezas del rompecabezas) */
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm",
+                "-static" /* Para que el .exe funcione en la PC de la U */
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
