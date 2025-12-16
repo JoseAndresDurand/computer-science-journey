@@ -39,7 +39,7 @@ El juego utiliza un catálogo de datos (`struct`) con información real:
 
 ## 📦 Instalación y Ejecución
 
-1. Descarga la última versión desde la sección **[Releases](https://github.com/JoseAndresDurand/computer-science-journey/releases/latest)**.
+1. Descarga la versión oficial del juego desde la sección **[Releases](https://github.com/JoseAndresDurand/computer-science-journey/releases/tag/flappy-condor-v1.0)**.
 2.  Asegúrate de que el archivo `condor_spritesheet.png` esté en la misma carpeta que el `.exe`.
 3.  Ejecuta `main.exe`.
 
