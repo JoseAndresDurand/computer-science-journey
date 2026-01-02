@@ -284,9 +284,10 @@ void Sistema::realizarPrestamo(){
 int main(){
     Sistema biblioteca;
     int opcion;
-
+    
     do{
-        cout<<"\n******** BIBLIOTECA UNSA ********"<<endl;
+        cout<<"\n******** BIBLIOTECA UNSA ********"<<endl;    
+        
         cout<<"1. Agregar Alumno"<<endl;
         cout<<"2. Agregar Profesor"<<endl;
         cout<<"3. Agregar Documento"<<endl;
@@ -296,7 +297,7 @@ int main(){
         cout<<"7. Salir"<<endl;
         cout<<"Elija una opcion: ";
         cin>>opcion;
-
+        cin.ignore(); 
         switch(opcion){
             case 1: biblioteca.agregarPersona(1); break;
             case 2: biblioteca.agregarPersona(2); break;
@@ -304,13 +305,13 @@ int main(){
                 int tipoDoc;
                 cout<<"Tipo (1:Libro, 2:Tesis, 3:Revista): ";
                 cin>>tipoDoc;
+                cin.ignore(); 
                 biblioteca.agregarDocumento(tipoDoc);
                 break;
             case 4: biblioteca.listarPersonas(); break;
             case 5: biblioteca.listarDocumentos(); break;
             case 6: biblioteca.realizarPrestamo(); break;
         }
-
     }while(opcion != 7);
 
     return 0;
