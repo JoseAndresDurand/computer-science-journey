@@ -21,7 +21,7 @@ void fractalTree(Turtle *t, float length, int depth, float angle) {
   fractalTree(t, length * 0.7, depth - 1, angle);
   turtleLeft(t, angle);
   turtleBackward(t, length);
-  // Colores de las ramas
+  // Colores de las ramas:
   if (depth > 5)
     turtleSetColor(t, 120, 70, 20);
   else
