@@ -10,26 +10,26 @@ int main() {
 }
 
 void triangle(Turtle *t, float length, int depth) {
-  if (depth == 0)
+  if (depth == 0) {
+    for (int i = 0; i < 3; i++) {
+      turtleForward(t, length);
+      turtleLeft(t, 120.0f);
+    }
     return;
-  for (int i = 0; i < 3; i++) {
-    turtleForward(t, length);
-    turtleLeft(t, 120.0f);
   }
-  turtleForward(t, length / 2.0);
+  float half_length = length / 2.0f;
+  triangle(t, half_length, depth - 1);
+
+  turtleForward(t, half_length);
+  triangle(t, half_length, depth - 1);
+
+  turtleBackward(t, half_length);
   turtleLeft(t, 60.0f);
-  for (int i = 0; i < 3; i++) {
-    turtleForward(t, length / 2.0);
-    turtleLeft(t, 120.0f);
-  }
+  turtleForward(t, half_length);
   turtleRight(t, 60.0f);
-  turtleBackward(t, length / 2.00);
+  triangle(t, half_length, depth - 1);
+
   turtleLeft(t, 60.0f);
-  turtleForward(t, length / 2.0);
+  turtleBackward(t, half_length);
   turtleRight(t, 60.0f);
-  for (int i = 0; i < 3; i++) {
-    turtleForward(t, length / 2.0);
-    turtleLeft(t, 120.0f);
-  }
-  triangle(t, length / 2.0, depth - 1);
 }
