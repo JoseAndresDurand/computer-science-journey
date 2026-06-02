@@ -28,7 +28,7 @@ void triangle(Turtle *t, float length, int depth) {
   turtleForward(t, half_length);
   turtleRight(t, 60.0f);
   triangle(t, half_length, depth - 1);
-
+  // retornamos al inicio
   turtleLeft(t, 60.0f);
   turtleBackward(t, half_length);
   turtleRight(t, 60.0f);
