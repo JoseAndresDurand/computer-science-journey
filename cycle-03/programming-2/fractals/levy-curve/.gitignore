@@ -1,0 +1,7 @@
+# Ignorar objetos y volcados
+*.o
+*.out
+core
+
+# Ignorar EL EJECUTABLE exacto que veo en tu carpeta
+levy_curve_1
