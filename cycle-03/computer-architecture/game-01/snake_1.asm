@@ -14,7 +14,7 @@ MOV CX, 8         ; Cargamos el contador con 8 (tamaño de la serpiente)
 ; Queremos guardar el color (0Ah = Verde) y el carácter (2Ah = '*')
 ; Como la CPU guarda el Byte Bajo primero y el Alto después,
 ; metemos ambos en AX de un solo golpe:
-MOV AX, 0A2Ah     ; AH = 0Ah (Color), AL = 2Ah (Carácter)
+MOV AX, 0A3Eh     ; AH = 0Ah (Color), AL = 3Eh (Carácter: '>' )
 
 ; --- FASE 3: EL BUCLE DE DIBUJO ---
 DIBUJAR_CUERPO:
