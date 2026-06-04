@@ -1,27 +1,31 @@
 #include <stdio.h>
 
-void numero_a_bits(int arr[], int matrix[], int n);
+void numero_a_bits(int m, int n, int arr[], int matrix[][n]);
 void imprimir(int arr[], int n);
+void imprimir_matrix(int m, int n, int arr[][n]);
 
 int main() {
-  int arr[] = {5};
-  int n = 4;
-  int matrix[n];
+  int arr[] = {5, 7, 8, 13, 11};
+  int m = 5; // numero de elementos a ordenar
+  int n = 4; // numero de bit
+  int matrix[m][n];
 
-  numero_a_bits(arr, matrix, n);
+  numero_a_bits(m, n, arr, matrix);
 
-  imprimir(arr, 1);
-  imprimir(matrix, n);
+  imprimir(arr, m);
+  imprimir_matrix(m, n, matrix);
 
   return 0;
 }
 
-void numero_a_bits(int arr[], int matrix[], int n) {
-  int numero = arr[0];
+void numero_a_bits(int m, int n, int arr[], int matrix[][n]) {
   int mascara = 1;
-  for (int i = n; i > 0; i--) {
-    matrix[i - 1] = numero & mascara;
-    numero = numero >> 1;
+  for (int i = 0; i < m; i++) {
+    int numero = arr[i];
+    for (int j = n; j > 0; j--) {
+      matrix[i][j - 1] = numero & mascara;
+      numero = numero >> 1;
+    }
   }
 }
 
@@ -30,4 +34,13 @@ void imprimir(int arr[], int n) {
     printf("%d ", arr[i]);
   }
   printf("\n");
+}
+
+void imprimir_matrix(int m, int n, int arr[][n]) {
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      printf("%d ", arr[i][j]);
+    }
+    printf("\n");
+  }
 }
