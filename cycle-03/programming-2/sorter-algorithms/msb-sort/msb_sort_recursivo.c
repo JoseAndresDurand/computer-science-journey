@@ -24,18 +24,18 @@ int main() {
 
 void msb_sort_recursivo(int arr[], int mascara, int min_index, int max_index) {
   int min = min_index;
-  int max = max_index - 1;
-  if (mascara == 0)
+  int max = max_index;
+  if (mascara == 0 || min >= max)
     return;
 
-  while (min < max) {
-    while (min < max && ((arr[min] & mascara) == 0)) {
+  while (min <= max) {
+    while (min <= max && ((arr[min] & mascara) == 0)) {
       min++;
     }
-    while (min < max && ((arr[max] & mascara) == mascara)) {
+    while (min <= max && ((arr[max] & mascara) == mascara)) {
       max--;
     }
-    if (min < max) {
+    if (min <= max) {
       int temp = arr[min];
       arr[min] = arr[max];
       arr[max] = temp;
@@ -43,8 +43,8 @@ void msb_sort_recursivo(int arr[], int mascara, int min_index, int max_index) {
       min++;
     }
   }
-  msb_sort_recursivo(arr, mascara / 2, 0, max_index / 2);
-  msb_sort_recursivo(arr, mascara / 2, max_index / 2, max_index);
+  msb_sort_recursivo(arr, mascara / 2, min_index, max);
+  msb_sort_recursivo(arr, mascara / 2, min, max_index);
 }
 
 void msb_sort(int m, int n, int arr[]) {
