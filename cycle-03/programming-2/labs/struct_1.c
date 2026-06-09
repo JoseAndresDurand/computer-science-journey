@@ -1,3 +1,5 @@
+//Ejercicio del libro K&R cap 6
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
