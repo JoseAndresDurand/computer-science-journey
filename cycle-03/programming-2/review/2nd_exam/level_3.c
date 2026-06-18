@@ -50,7 +50,9 @@
  * =============================================================================
  */
 
+#include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
   int id;
@@ -58,6 +60,7 @@ typedef struct {
   float peso;
 } Drone;
 
+int comparar_drones(const void *a, const void *b);
 void imprimir(Drone *d, int n);
 
 int main() {
@@ -68,8 +71,30 @@ int main() {
     scanf("%d %d %f", &competidores[i].id, &competidores[i].velocidad,
           &competidores[i].peso);
   }
+
+  qsort(competidores, n, sizeof(Drone), comparar_drones);
+
   imprimir(competidores, n);
   return 0;
+}
+
+int comparar_drones(const void *a, const void *b) {
+  // Casting
+  const Drone *dronA = (const Drone *)a;
+  const Drone *dronB = (const Drone *)b;
+
+  if (dronA->velocidad != dronB->velocidad) {
+    return dronB->velocidad - dronA->velocidad;
+  }
+  if (dronA->peso != dronB->peso) {
+    if (dronA->peso < dronB->peso) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+
+  return dronA->id - dronB->id;
 }
 
 void imprimir(Drone *d, int n) {
